@@ -1,0 +1,13 @@
+local_copy_outgoing:
+    driver = appendfile
+    headers_add = X-Archive-Sent: on $primary_hostname
+#    directory = /var/mail/mailarchive/$sender_address/outgoint
+    delivery_date_add
+    envelope_to_add
+    return_path_add
+    group = Debian-exim
+    user = Debian-exim
+    mode = 0660
+    maildir_format = true
+    create_directory = true
+

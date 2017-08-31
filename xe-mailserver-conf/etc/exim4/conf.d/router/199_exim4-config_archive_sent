@@ -1,0 +1,21 @@
+
+#################################
+### router/199_exim4-archive_sent
+#################################
+# This file holds the router for archiving outgoing emails
+
+
+.ifdef ARCHIVE_SENT
+archive_sent:
+  debug_print = "R: copy sent emails to local_user for $local_part@$domain"
+  driver = redirect
+  domains = !+local_domains
+  headers_add = X-Archive-Sent: true
+  repeat_use = False
+#  data = $authenticated_id
+  data = /var/mail/mailarchive/$sender_address/outgoing/
+  directory_transport = local_copy_outgoing
+  cannot_route_message = Unknown user
+  unseen
+.endif
+

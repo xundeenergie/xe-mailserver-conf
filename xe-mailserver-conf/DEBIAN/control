@@ -1,0 +1,13 @@
+Package: xe-mailserver-config
+Version: 0.1.11
+Section: mail
+Priority: extra
+Architecture: all
+Maintainer: Jakobus Schürz <jakob@xundeenergie.at>
+Homepage: http://github.com/xundeenergie/xe-mailserver
+Provides: xe-mailserver-config
+Depends: 
+Recommends: 
+Description: Additional config-files for a mailserver
+ This package has several config-files for a mailserver build with exim4, dovecot, spamassassin for xundeenergie
+

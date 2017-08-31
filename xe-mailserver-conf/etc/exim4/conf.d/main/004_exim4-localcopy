@@ -1,0 +1,7 @@
+# #################################################### #
+# /etc/exim4/conf.d/main/004_exim4-localcopy  #
+# #################################################### #
+
+# Redirect a copy of every sent email to the imap-server
+ARCHIVE_SENT = true
+ARCHIVE_RECEIVE = true
