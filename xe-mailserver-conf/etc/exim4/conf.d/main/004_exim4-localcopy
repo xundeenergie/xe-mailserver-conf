@@ -3,5 +3,5 @@
 # #################################################### #
 
 # Redirect a copy of every sent email to the imap-server
-ARCHIVE_SENT = true
-ARCHIVE_RECEIVE = true
+#ARCHIVE_SENT = false
+#ARCHIVE_RECEIVE = false
