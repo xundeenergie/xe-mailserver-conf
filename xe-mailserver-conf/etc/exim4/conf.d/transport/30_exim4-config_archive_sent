@@ -1,11 +1,13 @@
 local_copy_outgoing:
   driver = appendfile
-  headers_add = X-Archive-Sent: on $primary_hostname
+  headers_add = X-Archive-Sent-1: on $primary_hostname
+  headers_add = X-Archive-Sent-2: on $sender_host_name
+  headers_add = X-Archive-Sent-2: on $local_part
   delivery_date_add
   envelope_to_add
   return_path_add
-  group = Debian-exim
-  user = Debian-exim
+  group = vmail
+  user = vmail
   mode = 0660
   maildir_format = true
   create_directory = true
@@ -13,14 +15,18 @@ local_copy_outgoing:
 
 local_copy_incoming:
   driver = appendfile
-  headers_add = X-Archive-Received: on $primary_hostname
-  directory = /var/mail/mailarchive/$local_part@$domain/incoming
   delivery_date_add
   envelope_to_add
-  headers_add = X-Income-Archived: true
   return_path_add
-  group = Debian-exim
-  user = Debian-exim
+  group = vmail
+  user = vmail
   mode = 0660
-  maildir_format = true
-  create_directory = true
+  maildir_format
+  directory = /var/mail/mailarchiv/$local_part/incoming
+  create_directory
+
+#  driver = pipe
+#  command = /usr/lib/dovecot/dovecot-lda -f $sender_address -d mailarchiv -m $local_part/incoming
+
+  headers_add = X-Archive-Received: on Primary_hostname: $primary_hostname or Sender_host_name: $sender_host_name
+  #headers_add = X-Income-Archived: true
