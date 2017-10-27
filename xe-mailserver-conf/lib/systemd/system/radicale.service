@@ -1,0 +1,26 @@
+[Unit]
+Documentation=man:radicale(8)
+Description=Radicale CalDAV and CardDAV server
+Before=multi-user.target
+#After=remote-fs.target
+
+[Service]
+Restart=on-failure
+TimeoutSec=5min
+IgnoreSIGPIPE=no
+KillMode=process
+RuntimeDirectory=radicale
+User=radicale
+Group=radicale
+UMask=0027
+PrivateTmp=true
+#ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+NoNewPrivileges=true
+ExecStart=/usr/bin/python3 -m radicale --config /etc/radicale/config  -f -D
+
+[Install]
+WantedBy=multi-user.target

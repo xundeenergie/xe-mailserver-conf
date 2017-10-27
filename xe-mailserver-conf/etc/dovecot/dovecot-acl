@@ -2,5 +2,4 @@ Roseggergasse$familyextracard group=home lrswip
 Mailarchiv owner lrsw
 Mailarchiv$* owner lrsw
 Virtual$ authenticated lrws
-Virtual$All authenticated lrws
-Virtual$All$* authenticated lrws
+Virtual$* authenticated lrws
