@@ -166,7 +166,6 @@ type = owner_only
 # -------
 # Value: filesystem | multifilesystem | database | custom
 #type = filesystem
-type = multifilesystem
 
 # Custom storage handler
 #custom_handler =
@@ -180,6 +179,8 @@ filesystem_folder = /var/lib/radicale/collections
 # See http://docs.sqlalchemy.org/en/rel_0_8/core/engines.html#sqlalchemy.create_engine
 #database_url =
 
+[web]
+type = radicale_infcloud
 
 [logging]
 
