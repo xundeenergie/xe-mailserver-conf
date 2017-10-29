@@ -33,6 +33,9 @@ case "$1" in
 
     configure)
         id vmail || useradd -r -d /var/mail -s /sbin/nologin -c "Virtual mailbox" vmail
+        mv "/var/mail/virtual/Neue_Mails" "/var/mail/virtual/Neue Mails"
+        mv "/var/mail/virtual/Ungesehene_Mails" "/var/mail/virtual/Ungesehene Mails"
+        
         ;;
     abort-upgrade|abort-remove|abort-deconfigure)
         exit 0

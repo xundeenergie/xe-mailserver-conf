@@ -1,4 +1,5 @@
 /etc/systemd/system/spamassassin.service.d/unit.conf
+/etc/systemd/system/dovecot.service.d/service.conf
 /etc/exim4/conf.d/main/001_localmacros_dkim
 /etc/exim4/conf.d/main/004_exim4-localcopy
 /etc/exim4/conf.d/router/180_exim4-config_bogofilter
@@ -7,3 +8,16 @@
 /etc/exim4/conf.d/transport/30_exim4-config_archive_sent
 /etc/exim4/conf.d/acl/10_exim4-config_local_dkim_check
 /etc/exim4/conf.d/auth/40_dovecot_sasl
+/etc/dovecot/dovecot-acl
+/etc/dovecot/xe-dovecot.conf
+/etc/radicale/config
+/etc/radicale/logging
+/lib/systemd/system/mailserver.target
+/lib/systemd/system/radicale.service
+/var/mail/virtual/Markierte/dovecot-virtual
+/var/mail/virtual/INBOX/Drafts/dovecot-virtual
+/var/mail/virtual/INBOX/Junk/dovecot-virtual
+/var/mail/virtual/INBOX/Sent/dovecot-virtual
+/var/mail/virtual/INBOX/Trash/dovecot-virtual
+/var/mail/dovecot-acl
+/var/mail/public/dovecot-acl
