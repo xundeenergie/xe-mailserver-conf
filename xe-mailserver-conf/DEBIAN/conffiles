@@ -10,10 +10,8 @@
 /etc/exim4/conf.d/auth/40_dovecot_sasl
 /etc/dovecot/dovecot-acl
 /etc/dovecot/xe-dovecot.conf
-/etc/radicale/config
-/etc/radicale/logging
-/lib/systemd/system/mailserver.target
-/lib/systemd/system/radicale.service
+/etc/radicale/xe-config
+/etc/radicale/xe-logging
 /var/mail/virtual/Markierte/dovecot-virtual
 /var/mail/virtual/INBOX/Drafts/dovecot-virtual
 /var/mail/virtual/INBOX/Junk/dovecot-virtual

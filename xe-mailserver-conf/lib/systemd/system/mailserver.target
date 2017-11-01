@@ -1,5 +1,0 @@
-[Unit]
-Description=Dovecot, Exim4 and all other services for a mailserver
-
-[Install]
-WantedBy=multi-user.target
