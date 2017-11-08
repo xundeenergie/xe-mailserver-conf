@@ -1,0 +1,9 @@
+if error_message then finish endif
+if $authenticated_id is not "^\\$"
+then
+testprint "COPY outgoing from $authenticated_id to /var/mail/mailarchiv/$authenticated_id/outgoing/"
+#unseen save /var/mail/mailarchiv/$authenticated_id/outgoing/
+else
+fail "authenticated_id is unset: $authenticated_id"
+testprint "NO COPY outgoing from $authenticated_id to /var/mail/mailarchiv/$authenticated_id/outgoing/"
+endif

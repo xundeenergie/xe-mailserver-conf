@@ -44,7 +44,7 @@ key = /etc/radicale/ssl/certs/private/radicale.key
 #ciphers =
 
 # Reverse DNS to resolve client address in logs
-dns_lookup = True
+#dns_lookup = True
 
 # Root URL of Radicale (starting and ending with a slash)
 #base_prefix = /
@@ -119,8 +119,9 @@ type = radicale_imap
 # IMAP Configuration
 #imap_hostname = localhost
 imap_host = localhost
-imap_port = 993
-imap_ssl = True
+#imap_port = 993
+#imap_ssl = True
+#imap_secure = True
 
 # PAM group user should be member of
 #pam_group_membership =
@@ -180,7 +181,7 @@ filesystem_folder = /var/lib/radicale/collections
 #database_url =
 
 [web]
-type = radicale_infcloud
+type = radicale_infcloud
 
 [logging]
 
@@ -190,12 +191,12 @@ type = radicale_infcloud
 # http://docs.python.org/library/logging.config.html
 config = /etc/radicale/xe-logging
 # Set the default logging level to debug
-#debug = False
+debug = True
 # Store all environment variables (including those set in the shell)
-#full_environment = False
+#full_environment = True
 
 
 [headers]
 
 # Additional HTTP headers
-#Access-Control-Allow-Origin = *
+Access-Control-Allow-Origin = *

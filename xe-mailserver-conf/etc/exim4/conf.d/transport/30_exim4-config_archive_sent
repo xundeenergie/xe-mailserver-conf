@@ -24,9 +24,4 @@ local_copy_incoming:
   maildir_format
   directory = /var/mail/mailarchiv/$local_part/incoming
   create_directory
-
-#  driver = pipe
-#  command = /usr/lib/dovecot/dovecot-lda -f $sender_address -d mailarchiv -m $local_part/incoming
-
   headers_add = X-Archive-Received: on Primary_hostname: $primary_hostname or Sender_host_name: $sender_host_name
-  #headers_add = X-Income-Archived: true
