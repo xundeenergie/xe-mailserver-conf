@@ -1,0 +1,13 @@
+.PHONY: local-repo
+local-repo:
+	@echo
+	@mkdir -p xe-mailserver-conf/var/mail
+	@sudo rsync -ar /var/mail/real xe-mailserver-conf/var/mail/
+	@sudo rsync -ar /var/mail/virtual xe-mailserver-conf/var/mail/
+#local-repo: xe-ca-cert/etc/ssl/certs/xe-ca-chain.cert.pem
+#
+#xe-ca-cert/etc/ssl/certs/xe-ca-chain.cert.pem: /root/ca/intermediate/certs/ca-chain.cert.pem
+#	@echo cp -uv /root/ca/intermediate/certs/ca-chain.cert.pem
+#	sudo cp -uv /root/ca/intermediate/certs/ca-chain.cert.pem xe-ca-cert/etc/ssl/certs/xe-ca-chain.cert.pem
+#	sudo chown jakob:jakob xe-ca-cert/etc/ssl/certs/xe-ca-chain.cert.pem
+#
