@@ -2,7 +2,7 @@
 dovecot_plain:
   driver = dovecot
   public_name = PLAIN
-  server_socket = /var/run/dovecot/auth-client
+  server_socket = /usr/local/var/run/dovecot/auth-client
   server_set_id = $auth1
 .ifndef AUTH_SERVER_ALLOW_NOTLS_PASSWORDS
   server_advertise_condition = ${if eq{$tls_in_cipher}{}{}{*}}
@@ -12,7 +12,7 @@ dovecot_plain:
 dovecot_login:
   driver = dovecot
   public_name = LOGIN
-  server_socket = /var/run/dovecot/auth-client
+  server_socket = /usr/local/var/run/dovecot/auth-client
   server_set_id = $auth1
 .ifndef AUTH_SERVER_ALLOW_NOTLS_PASSWORDS
   server_advertise_condition = ${if eq{$tls_in_cipher}{}{}{*}}
@@ -21,7 +21,7 @@ dovecot_login:
 dovecot_cram:
   driver = dovecot
   public_name = CRAM-MD5
-  server_socket = /var/run/dovecot/auth-client
+  server_socket = /usr/local/var/run/dovecot/auth-client
   server_set_id = $auth1
 .ifndef AUTH_SERVER_ALLOW_NOTLS_PASSWORDS
   server_advertise_condition = ${if eq{$tls_in_cipher}{}{}{*}}
