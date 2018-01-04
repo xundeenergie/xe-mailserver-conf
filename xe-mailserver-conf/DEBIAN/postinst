@@ -33,6 +33,7 @@ case "$1" in
 
     configure)
         id vmail || useradd -r -d /var/mail -s /sbin/nologin -c "Virtual mailbox" vmail
+        id dovenull || useradd -r --system --no-create-home -s /bin/false -c "Dovecot login user" dovenull
 #        [ -e "/var/mail/virtual/Neue Mails" ] || /bin/mv "/var/mail/virtual/Neue_Mails" "/var/mail/virtual/Neue Mails"
 #        [ -e "/var/mail/virtual/Ungesehene Mails" ] || /bin/mv "/var/mail/virtual/Ungesehene_Mails" "/var/mail/virtual/Ungesehene Mails"
         
