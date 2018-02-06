@@ -1,5 +1,5 @@
 Package: xe-mailserver-config
-Version: 0.1.38
+Version: 0.1.39
 Section: mail
 Priority: extra
 Architecture: all
