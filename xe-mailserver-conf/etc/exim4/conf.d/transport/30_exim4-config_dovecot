@@ -1,0 +1,33 @@
+### transport/30_exim4-config_dovecot
+#################################
+
+#
+dovecot_lmtp:
+  driver = lmtp
+  socket = /usr/local/var/run/dovecot/lmtp
+#  user = vmail
+#  group = vmail
+  #maximum number of deliveries per batch, default 1
+  batch_max = 200
+
+dovecot_delivery:
+  driver = pipe
+  # Use /usr/lib/dovecot/dovecot-lda  if using Debian's package.
+  # You may or may not want to add -d $local_part@$domain depending on if you need a userdb lookup done.
+  #command = /usr/local/libexec/dovecot/dovecot-lda -f $sender_address
+  command = /usr/lib/dovecot/dovecot-lda -f $sender_address -d $local_part
+  message_prefix =
+  message_suffix =
+  log_output
+  delivery_date_add
+  envelope_to_add
+  return_path_add
+  #user = dovecot
+  #user = $local_part
+  user = vmail
+  group = vmail
+  #mode = 0660
+  .ifdef ARCHIVE_RECEIVE
+      shadow_transport = local_copy_incoming
+  .endif
+  temp_errors = 64 : 69 : 70: 71 : 72 : 73 : 74 : 75 : 78
