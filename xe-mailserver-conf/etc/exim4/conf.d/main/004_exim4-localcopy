@@ -3,8 +3,8 @@
 # #################################################### #
 
 # Redirect a copy of every sent email to the imap-server
-ARCHIVE_SENT = false
-ARCHIVE_RECEIVE = true
+#ARCHIVE_SENT = false
+#ARCHIVE_RECEIVE = true
 
 .ifdef ARCHIVE_SENT
   system_filter = /etc/exim4/systemfilter.txt
