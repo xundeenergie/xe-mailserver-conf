@@ -5,13 +5,12 @@ DOMAIN="$1"
 TS=$(date  +"%Y%m%d")
 
 [ -e "$EXIMCONFDIR" ] || mkdir -p "${EXIMCONFDIR}"
-openssl genrsa -out "${EXIMCONFDIR}/${TS}.${DOMAIN}.priv" 1024 -outform PEM
+openssl genpkey -algorithm RSA -out "${EXIMCONFDIR}/${TS}.${DOMAIN}.priv" -outform PEM
 openssl rsa -in "${EXIMCONFDIR}/${TS}.${DOMAIN}.priv" -out "${EXIMCONFDIR}/${TS}.${DOMAIN}.pub" -pubout -outform PEM
 ln -sf "${EXIMCONFDIR}/${TS}.${DOMAIN}.priv" "${EXIMCONFDIR}/${DOMAIN}.priv"
 ln -sf "${EXIMCONFDIR}/${TS}.${DOMAIN}.pub" "${EXIMCONFDIR}/${DOMAIN}.pub"
 
 echo "
-
 Put this in your DNS:"
 
 echo "${DOMAIN%%.*}._domainkey.${DOMAIN} IN TXT"
